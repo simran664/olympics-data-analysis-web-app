@@ -116,7 +116,7 @@ if user_menu == 'Country-wise Analysis':
     st.title(selected_country + " excels in the following sports")
     pt = helper.country_event_heatmap(df,selected_country)
     fig, ax = plt.subplots(figsize=(20, 20))
-    ax = sns.heatmap(pt,annot=True)
+    ax = sns.heatmap(pt.astype(float), annot=True)
     st.pyplot(fig)
 
     st.title("Top 10 athletes of " + selected_country)
@@ -173,6 +173,7 @@ if user_menu == 'Athlete wise Analysis':
     fig = px.line(final, x="Year", y=["Male", "Female"])
     fig.update_layout(autosize=False, width=1000, height=600)
     st.plotly_chart(fig)
+
 
 
 
