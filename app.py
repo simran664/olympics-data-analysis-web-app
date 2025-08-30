@@ -122,7 +122,6 @@ if user_menu == 'Country-wise Analysis':
         st.pyplot(plt.gcf())
     else:
         st.warning(f"No medal data found for {selected_country}")
-    st.pyplot(fig)
 
     st.title("Top 10 athletes of " + selected_country)
     top10_df = helper.most_successful_countrywise(df,selected_country)
@@ -178,6 +177,7 @@ if user_menu == 'Athlete wise Analysis':
     fig = px.line(final, x="Year", y=["Male", "Female"])
     fig.update_layout(autosize=False, width=1000, height=600)
     st.plotly_chart(fig)
+
 
 
 
